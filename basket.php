@@ -26,6 +26,7 @@
 
     d($template);
 ?>
+<h1>Корзина</h1>
 <div class='basket'>
     <?php foreach( $template['products'] as $product ): ?>
         <div class="basket__item">
