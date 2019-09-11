@@ -15,11 +15,24 @@
         }
     }
 ?>
-<form method="POST">
-    <input type="text" name="fio" placeholder="ФИО">
-    <input type="email" name="email" placeholder="Email">
-    <input type="tel" name="phone" placeholder="Phone">
-    <input type="password" name="password" placeholder="Пароль">
-    <button type="submit">Зарегестрироваться</button>
-</form>
+<div class="row mt-5 justify-content-center">
+    <div class="col-5">
+        <h1>Регистрация</h1>
+        <form class="mt-3" method="POST">
+            <div class="form-group">
+                <input class="form-control" type="text" name="fio" placeholder="ФИО">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="email" name="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="tel" name="phone" placeholder="Phone"> 
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="password" name="password" placeholder="Пароль">
+            </div> 
+            <button class="btn btn-primary" type="submit">Зарегестрироваться</button>
+        </form>
+    </div>
+</div>
 <?php include('parts/footer.php');?>
