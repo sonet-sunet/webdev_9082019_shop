@@ -1,13 +1,79 @@
+.catalog-head {
+  color: #606060;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.catalog-desc {
+  text-align: center;
+  color: #77654e;
+  margin-top: 5px;
+  font-style: italic;
+  font-size: 18px;
+}
+
+.catalog-products {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 0px 40px;
+}
+
 .catalog-products-item {
-  border: 1px solid gray;
+  width: 200px;
+  height: 250px;
+  margin: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  margin-bottom: 60px;
 }
 
 .catalog-products-item-pic {
-  width: 100px;
+  width: 180px;
   height: 200px;
+  border: 1px solid #e6d6c0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   background-position: center center;
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+.catalog-products-item-name {
+  margin-top: 20px;
+  text-align: center;
+  color: #77654e;
+  font-weight: bold;
+}
+
+.catalog-products-item-price {
+  margin-top: 5px;
+  text-align: center;
+  color: #988163;
+}
+
+.catalog-filters {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.catalog-filters-select {
+  width: 150px;
+  margin: 10px;
+  border: none;
+  outline: none;
+  font-style: italic;
+  color: #988163;
+  border-bottom: 1px solid black;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .catalog-pagination {

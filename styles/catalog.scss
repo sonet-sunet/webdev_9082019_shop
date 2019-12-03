@@ -1,16 +1,71 @@
 .catalog{
+    &-head{
+        color: #606060;
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 20px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        text-transform: uppercase;
+        font-weight: 400;
+    }
+    &-desc{
+        text-align: center;
+        color: #77654e;
+        margin-top: 5px;
+        font-style: italic;
+        font-size: 18px;
+    }
     &-products{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 0px 40px;
+        //justify-content: space-between;
         &-item{
-            border: 1px solid gray;
+            width: 200px;
+            height: 250px;
+            margin: 20px;
+            text-decoration: none;
+            cursor: pointer;
+            margin-bottom: 60px;
             &-pic{
-                width: 100px;
+                width: 180px;
                 height: 200px;
+                border: 1px solid #e6d6c0;
+                box-sizing: border-box;
                 background-position: center center;
                 background-size: contain;
                 background-repeat: no-repeat;
             }
+            &-name{
+                margin-top: 20px;
+                text-align: center;
+                color: #77654e;
+                font-weight: bold;
+            }
+            &-price{
+                margin-top: 5px;
+                text-align: center;
+                color: #988163;
+            }
+
         }
     }
+    &-filters {
+        text-align: center;
+        margin-top: 30px;
+        &-select {
+            width: 150px;
+            margin: 10px;
+            border: none;
+            outline: none;
+            font-style: italic;
+            color: #988163;
+            border-bottom: 1px solid black;
+            background-color: rgba( #fff, 0.5);
+        }
+    }
+
     &-pagination{
         display: flex;
         justify-content: center;

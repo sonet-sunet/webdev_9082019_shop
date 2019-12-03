@@ -10,7 +10,7 @@
         ]
     ];
 
-    $product_on_page = 3;
+    $product_on_page = 10;
     $now_page = 1;
 
     if( !empty( $_GET['id'] ) ){
@@ -18,9 +18,31 @@
             $now_page = $_GET['nowPage'];    
         }
 
+        if( isset( $_GET['category'] ) ){
+            $val = $_GET['category'];
+            $category_value = "AND products.category = '$val'";    
+        } else {
+            $category_value = '';
+        }
+
+        if( isset( $_GET['size'] ) ){
+            $val = $_GET['size'];
+            $size_value = "AND products.size = '$val'";    
+        } else {
+            $size_value = '';
+        }
+
+        if( isset( $_GET['priceMin'] ) ){
+            $valMin = $_GET['priceMin'];
+            $valMax = $_GET['priceMax'];
+            $price_value = "AND products.price > '$valMin' AND products.price < '$valMax'";    
+        } else {
+            $price_value = '';
+        }
+       
         $sql_products_all = "SELECT products.* FROM products
         INNER JOIN catalogs_products ON catalogs_products.product_id = products.id
-        WHERE catalogs_products.catalog_id = {$_GET['id']}
+        WHERE catalogs_products.catalog_id = {$_GET['id']} {$category_value} {$size_value} {$price_value}
         ";
 
         $result_products_all = mysqli_query($db, $sql_products_all);
@@ -36,9 +58,10 @@
 
         $sql_products = "SELECT products.* FROM products
         INNER JOIN catalogs_products ON catalogs_products.product_id = products.id
-        WHERE catalogs_products.catalog_id = {$_GET['id']}
+        WHERE catalogs_products.catalog_id = {$_GET['id']} {$category_value} {$size_value} {$price_value}
         LIMIT {$start_row_page}, {$product_on_page}
         ";
+
         $result_products = mysqli_query($db, $sql_products);
         
         //кол-во записей в выборке
@@ -51,7 +74,6 @@
             $count--;
         }
     }
-
-    sleep(3);
+    //sleep(3);
     echo json_encode($response);
 ?>
